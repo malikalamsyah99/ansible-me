@@ -1,0 +1,18 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Update YUM cache and install updates
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Notify when update is complete
+      debug:
+        msg: "Update server patch completed."
+      changed_when: false
+      notify: update_complete
+
+  handlers:
+    - name: update_complete
+      debug:
+        msg: "Pembaruan OS telah selesai."
