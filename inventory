@@ -1,0 +1,11 @@
+[prometheus]
+192.168.9.108
+
+[node-exporter]
+192.168.9.108
+192.168.9.112
+192.168.9.113
+
+[all:vars]
+ansible_ssh_user=malik
+ansible_ssh_private_key_file=~/.ssh/id_rsa.pub
